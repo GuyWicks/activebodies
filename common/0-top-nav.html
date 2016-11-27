@@ -1,0 +1,35 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-card-2" id="myNavbar">
+    <li>
+      <a href="#home" class="w3-wide">Active Bodies</a>
+    </li>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right">
+      <li class="w3-hide-small w3-hide-medium"><a href="#about"><i class="fa fa-home"></i> ABOUT</a></li>
+      <li class="w3-hide-small"><a href="#kids"><i class="fa fa-child"></i> KIDS</a></li>
+      <li class="w3-hide-small"><a href="#adults"><i class="fa fa-user"></i> ADULTS</a></li>
+      <li class="w3-hide-small w3-hide-medium"><a href="#parkour"><i class="fa fa-angle-double-down"></i> PARKOUR</a></li>
+      <li class="w3-hide-small w3-hide-medium"><a href="#parties"><i class="fa fa-birthday-cake"></i> PARTIES</a></li>
+      <li class="w3-hide-small"><a href="#contact"><i class="fa fa-envelope"></i> CONTACT</a></li>
+
+    </li>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <li>
+      <a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-mediumx" onclick="w3_open()">
+        <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+      </a>
+    </li>
+    </div>
+  </ul>
+</div>
+
+<!-- Sidenav on small screens when clicking the menu icon -->
+<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close &times;</a>
+  <a href="#about" onclick="w3_close()">ABOUT</a>
+  <a href="#team" onclick="w3_close()">TEAM</a>
+  <a href="#work" onclick="w3_close()">WORK</a>
+  <a href="#pricing" onclick="w3_close()">PRICING</a>
+  <a href="#contact" onclick="w3_close()">CONTACT</a>
+</nav>
