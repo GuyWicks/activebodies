@@ -32,28 +32,40 @@
       <!-- Add Google Maps -->
       <p class="w3-center w3-large">Where to find us:</p>
 
-<!-- large -->
-<div class="Flexible-container w3-center w3-hide-small w3-hide-medium"><iframe xwidth="100%" xheight="100%" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&amp;cp=53.641259~-1.829056&amp;lvl=16&amp;w=600&amp;h=600&amp;sty=r&amp;typ=s&amp;pp=&amp;ps=55&amp;dir=0&amp;mkt=en-gb&amp;src=SHELL&amp;form=BMEMJS"></iframe>
-<!--
-<div style="margin: 12px 0 0 0;"><a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;sp=&amp;mm_embed=map">View Larger Map</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;rtp=~pos.53.641259_-1.829056____&amp;mm_embed=dir">Get Directions</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=sy65nygvdtmq&amp;sty=b&amp;lvl=18&amp;sp=&amp;mm_embed=be">View Bird's Eye</a></div>
--->
-</div>
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px"></div>
+<!--script src="https://maps.googleapis.com/maps/api/js?key="></script-->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkwveZxWKBupxnikf2ngRe_j75cnR1d_8" type="text/javascript"></script>
+<script>
+//53.641259
+//-1.829056
+//AIzaSyAkwveZxWKBupxnikf2ngRe_j75cnR1d_8
+var myCenter = new google.maps.LatLng(53.641259, -1.829056);
+    
+function initialize() {
+    var mapProp = {
+    center: myCenter,
+    zoom: 16,
+    scrollwheel: false,
+    draggable: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+    
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    
+var marker = new google.maps.Marker({
+    position: myCenter,
+});
+    
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);    
+google.maps.event.addDomListener(window, 'resize', initialize);
+</script>
 
 
-<!-- medium -->
-<div class="Flexible-container w3-center w3-hide-small w3-hide-large"><iframe xwidth="500" xheight="500" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&amp;cp=53.641259~-1.829056&amp;lvl=16&amp;w=400&amp;h=400&amp;sty=r&amp;typ=s&amp;pp=&amp;ps=55&amp;dir=0&amp;mkt=en-gb&amp;src=SHELL&amp;form=BMEMJS"></iframe>
-<!--
-<div style="margin: 12px 0 0 0;"><a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;sp=&amp;mm_embed=map">View Larger Map</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;rtp=~pos.53.641259_-1.829056____&amp;mm_embed=dir">Get Directions</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=sy65nygvdtmq&amp;sty=b&amp;lvl=18&amp;sp=&amp;mm_embed=be">View Bird's Eye</a></div>
--->
-</div>
-
-
-<!-- small -->
-<div class="Flexible-container w3-center w3-hide-medium w3-hide-large"><iframe xwidth="300" xheight="300" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&amp;cp=53.641259~-1.829056&amp;lvl=16&amp;w=300&amp;h=300&amp;sty=r&amp;typ=s&amp;pp=&amp;ps=55&amp;dir=0&amp;mkt=en-gb&amp;src=SHELL&amp;form=BMEMJS"></iframe>
-<!--
-<div style="margin: 12px 0 0 0;"><a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;sp=&amp;mm_embed=map">View Larger Map</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=53.641259~-1.829056&amp;sty=r&amp;lvl=16&amp;rtp=~pos.53.641259_-1.829056____&amp;mm_embed=dir">Get Directions</a>&nbsp; |&nbsp; <a target="_blank" href="https://www.bing.com/maps/?cp=sy65nygvdtmq&amp;sty=b&amp;lvl=18&amp;sp=&amp;mm_embed=be">View Bird's Eye</a></div>
--->
-</div>
       <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 1 Saville Street, Milnsbridge, Huddersfield. HD3 4PG</p>
 
     </div>
