@@ -30,9 +30,21 @@ server {
 	root /var/www/html/activebodies;
 
 	# Add index.php to the list if you are using PHP
-	index index.html;
+	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
+
+	ssi on;
+
+	location /xxx {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+
+
+#        root    /var/www;
 
         location = / {
 		rewrite ^ /home redirect;
@@ -41,27 +53,16 @@ server {
         location / {
             	ssi 	on;
             	set 	$inc $request_uri;
-
             	if (!-f $request_filename) {
                 	rewrite ^ /index.html last;
             	}
             	if (!-f $document_root$inc.html) {
-			return 404;
+                	return 403;
             	}
-
-		add_header	x-inc 		$inc;
-		add_header	x-filename 	$request_filename;
-		add_header	x-doc-root 	$document_root;
-		add_header	x-doc-inc  	$document_root$inc.html;
         }
 
-	location /images {
-		try_files $uri = 404;
-	}
 
-	#
 	# Resize images
-	#
         location /resize {
                 alias 		/var/www/html/activebodies/images;
 
