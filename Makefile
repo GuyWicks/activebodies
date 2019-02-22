@@ -6,25 +6,12 @@
 
 help:
 
+clean:
+	- [ -f build.flag ] && rm build.flag
 
-clean: stop
-	- @rm master.zip
-	- @rm -rf activebodies-master
-	- @rm *.flag
-	- docker rm activebodies
-	
 build: build.flag
 
-
-master.zip:
-	@echo Download
-	wget --quiet https://github.com/GuyWicks/activebodies/archive/master.zip
-
-activebodies-master: master.zip
-	@echo unzip
-	unzip -qq master.zip
-	
-build.flag: activebodies-master
+build.flag:
 	docker build --tag guywicks/activebodies .
 	docker images
 	touch build.flag
@@ -37,8 +24,7 @@ start.flag:
 	touch start.flag
 	sleep 1
 	docker ps -a
-	curl localhost:8000
-	
+	curl localhost:8000/home
 
 stop:
 	docker stop activebodies
