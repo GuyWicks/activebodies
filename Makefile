@@ -20,7 +20,7 @@ start: start.flag
 
 start.flag:
 	- docker rm activebodies
-	docker run -d -p 8000:80 --name activebodies guywicks/activebodies
+	docker run -d -p 8000:80 --restart unless-stopped --name activebodies guywicks/activebodies
 	touch start.flag
 	sleep 1
 	docker ps -a
